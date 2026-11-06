@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>r星每日大赛吃瓜-每日大赛吃瓜合集_r星每日大赛热门看点与网友讨论</title>
+<meta name="description" content="r星每日大赛吃瓜主题首页，汇总每日大赛热点内容、网友讨论与热门看点，按日期分区呈现吃瓜合集，帮助访问者快速找到当天值得关注的大赛话题。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141a2b'/%3E%3Ccircle cx='32' cy='30' r='13' fill='none' stroke='%23ffcc4d' stroke-width='4'/%3E%3Cpath d='M19 30h26M32 17v26' stroke='%23ffcc4d' stroke-width='3'/%3E%3Cpath d='M22 50h20' stroke='%23ff7a59' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1420;
+  --bg-soft:#161d2e;
+  --card:#1b2336;
+  --card-2:#222c43;
+  --line:#2c3752;
+  --txt:#e8edf7;
+  --muted:#9aa7c2;
+  --gold:#ffcc4d;
+  --coral:#ff7a59;
+  --mint:#57d9a3;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(900px 420px at 82% -8%, rgba(255,204,77,.13), transparent 62%),
+    radial-gradient(760px 380px at 8% 4%, rgba(255,122,89,.12), transparent 60%),
+    var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(15,20,32,.82);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:24px;
+  padding:14px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(145deg,#232d46,#141a2b);
+  border:1px solid var(--line);
+  display:grid;place-items:center;
+}
+.logo-text{
+  font-size:17px;font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(92deg,var(--gold),var(--coral));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+nav.mainnav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav.mainnav a{
+  font-size:14px;color:var(--muted);padding:7px 13px;border-radius:999px;
+  transition:.2s;white-space:nowrap;
+}
+nav.mainnav a:hover{color:var(--txt);background:var(--card)}
+nav.mainnav a.cta{
+  color:#1a1205;background:linear-gradient(92deg,var(--gold),#ffb347);
+  font-weight:700;
+}
+nav.mainnav a.cta:hover{filter:brightness(1.08);color:#1a1205;background:linear-gradient(92deg,var(--gold),#ffb347)}
+/* 首屏 */
+.hero{padding:52px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);
+  border:1px solid rgba(255,204,77,.35);
+  background:rgba(255,204,77,.08);
+  padding:5px 14px;border-radius:999px;margin-bottom:18px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(87,217,163,.15)}
+h1{
+  font-size:clamp(30px,4.4vw,48px);
+  line-height:1.18;font-weight:900;letter-spacing:.5px;
+  margin-bottom:18px;
+}
+h1 .hl{background:linear-gradient(94deg,var(--gold),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:var(--muted);font-size:16px;max-width:36em;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:12px;font-size:15px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(92deg,var(--gold),#ffb347);color:#1a1205}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,204,77,.22);color:#1a1205;background:linear-gradient(92deg,var(--gold),#ffb347)}
+.btn-ghost{border-color:var(--line);color:var(--txt);background:var(--card)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[data-download-placeholder]{pointer-events:none;opacity:.92}
+.hero-visual{
+  position:relative;border-radius:22px;padding:22px;
+  background:linear-gradient(160deg,var(--card-2),#151c2c);
+  border:1px solid var(--line);
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.ticker{display:flex;flex-direction:column;gap:10px}
+.tick{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:12px;padding:10px 12px;font-size:13.5px;
+}
+.tick .tag{
+  font-size:11px;font-weight:800;color:#1a1205;
+  background:var(--gold);border-radius:6px;padding:2px 7px;flex-shrink:0;
+}
+.tick .tag.coral{background:var(--coral);color:#fff}
+.tick .tag.mint{background:var(--mint);color:#0d1b14}
+.tick span.txt{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* 统计条 */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin:10px 0 8px;
+}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;
+}
+.stat b{display:block;font-size:24px;color:var(--gold);line-height:1.3}
+.stat small{color:var(--muted);font-size:13px}
+/* 通用分区 */
+section.block{padding:52px 0 6px}
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:.3px}
+.sec-head .sub{color:var(--muted);font-size:14px;margin-bottom:3px}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);min-width:40px;margin-bottom:9px}
+/* 今日看点卡片 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.22s;position:relative;overflow:hidden;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,204,77,.45);box-shadow:0 16px 34px rgba(0,0,0,.3)}
+.card .kicker{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--coral);margin-bottom:10px}
+.card h3{font-size:17.5px;font-weight:800;margin-bottom:9px;line-height:1.45}
+.card p{font-size:14px;color:var(--muted);line-height:1.8}
+/* 日期合集列表 */
+.daylist{display:flex;flex-direction:column;gap:12px}
+.day{
+  display:grid;grid-template-columns:104px 1fr auto;gap:18px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:15px 20px;transition:.2s;
+}
+.day:hover{border-color:rgba(255,204,77,.4);background:var(--card-2)}
+.day .d{
+  font-weight:900;font-size:15px;color:var(--gold);
+  border-right:1px solid var(--line);padding-right:14px;
+}
+.day .d small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);letter-spacing:.5px}
+.day .t{font-size:15px;font-weight:600}
+.day .t em{font-style:normal;display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+.day .cnt{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.day .cnt b{color:var(--mint)}
+/* 讨论区 */
+.discuss{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.quote{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;
+}
+.quote .who{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.avatar{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  font-size:13px;font-weight:900;color:#141a2b;flex-shrink:0;
+}
+.quote .who b{font-size:14px;display:block;line-height:1.3}
+.quote .who small{font-size:12px;color:var(--muted)}
+.quote p{font-size:14px;color:#c6d0e4;line-height:1.85}
+/* 行文正文 */
+.prose{max-width:52em;color:#c6d0e4;font-size:15px}
+.prose p{margin-bottom:16px}
+.prose h3{color:var(--txt);font-size:17px;margin:6px 0 10px}
+/* 下载区 */
+.download{
+  margin:56px 0 0;
+  border-radius:22px;padding:34px;
+  background:linear-gradient(135deg,rgba(255,204,77,.1),rgba(255,122,89,.08)),var(--card);
+  border:1px solid rgba(255,204,77,.28);
+  display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;
+}
+.download h2{font-size:22px;margin-bottom:8px}
+.download p{color:var(--muted);font-size:14px;max-width:44em}
+/* 页尾 */
+footer.site{
+  margin-top:64px;border-top:1px solid var(--line);
+  padding:32px 0 40px;color:var(--muted);font-size:13.5px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.foot-brand{max-width:32em}
+.foot-brand .logo-text{font-size:15px;display:inline-block;margin-bottom:8px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a:hover{color:var(--gold)}
+.copyright{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);font-size:12.5px;color:#71809d}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .discuss{grid-template-columns:1fr}
+  .download{grid-template-columns:1fr;padding:26px}
+}
+@media (max-width:620px){
+  .head-inner{gap:10px;padding:12px 0}
+  nav.mainnav{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  nav.mainnav a{padding:6px 11px;font-size:13px}
+  .hero{padding:34px 0 26px}
+  h1{font-size:28px}
+  .grid-3{grid-template-columns:1fr}
+  .day{grid-template-columns:1fr;gap:6px;padding:14px 16px}
+  .day .d{border-right:0;border-bottom:1px solid var(--line);padding-bottom:6px;padding-right:0}
+  .day .cnt{justify-self:start}
+  section.block{padding:38px 0 4px}
+  .prose{font-size:14.5px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="返回顶部">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="30" r="13" stroke="#ffcc4d" stroke-width="4"/>
+          <path d="M19 30h26M32 17v26" stroke="#ffcc4d" stroke-width="3"/>
+          <path d="M22 50h20" stroke="#ff7a59" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">r星每日大赛吃瓜</span>
+    </a>
+    <nav class="mainnav" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#daily">每日合集</a>
+      <a href="#talk">网友讨论</a>
+      <a href="#about">吃瓜说明</a>
+      <a class="cta" href="#daily">看今天的大赛</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><span class="dot" aria-hidden="true"></span>每日更新 · 大赛热点逐条归档</span>
+        <h1>r星每日大赛吃瓜</h1>
+        <p class="lead">这里把每天关于 r星每日大赛吃瓜 的热门内容按日期收好：哪条大赛话题在发酵、哪个片段被反复转发、网友的争论停在哪个点上，都归到同一条时间线里，方便你一次看完当天的大赛瓜。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#today">进入今日看点</a>
+          <a class="btn btn-ghost" href="#daily">按日期翻合集</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="ticker">
+          <div class="tick"><span class="tag">热</span><span class="txt">当日大赛话题登上讨论榜前列</span></div>
+          <div class="tick"><span class="tag coral">新</span><span class="txt">吃瓜合集已补入最新一天的条目</span></div>
+          <div class="tick"><span class="tag mint">议</span><span class="txt">网友对同一段大赛画面的解读出现分歧</span></div>
+          <div class="tick"><span class="tag">追</span><span class="txt">被反复转发的片段已标注出处方向</span></div>
+          <div class="tick"><span class="tag coral">翻</span><span class="txt">旧合集保留，可按日期回看前几日</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>每日</b><small>合集更新节奏</small></div>
+      <div class="stat"><b>按日</b><small>条目归档方式</small></div>
+      <div class="stat"><b>多角度</b><small>同一大赛话题的讨论</small></div>
+      <div class="stat"><b>可回看</b><small>旧合集持续保留</small></div>
+    </div>
+  </div>
+
+  <section class="block" id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日看点</h2>
+        <span class="sub">当天最值得先看的三条</span>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="kicker">看点一</div>
+          <h3>大赛话题为什么突然变多</h3>
+          <p>当天 r星每日大赛吃瓜 的讨论量上涨，通常不是单一事件，而是几条大赛片段被同时转发，形成叠加效应。先看时间顺序，再看谁先发出，判断会清楚很多。</p>
+        </article>
+        <article class="card">
+          <div class="kicker">看点二</div>
+          <h3>同一段画面的两种解读</h3>
+          <p>吃瓜时最容易卡住的，是同一段大赛画面被读成两种意思。合集里把双方说法并列摆出，标注各自依据，不替任何一方下结论，读者自己比对更省力。</p>
+        </article>
+        <article class="card">
+          <div class="kicker">看点三</div>
+          <h3>被反复转发的片段从哪来</h3>
+          <p>转发链条越长，出处越容易模糊。r星每日大赛吃瓜 的条目会尽量标出最早的发布方向，遇到无法确认的部分直接写明"待核实"，不把推测写成事实。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="daily">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>每日合集</h2>
+        <span class="sub">按日期翻，一天一条</span>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="daylist">
+        <div class="day">
+          <div class="d">今天<small>最新</small></div>
+          <div class="t">当日大赛吃瓜全记录<em>话题起因、转发路径、讨论分歧点</em></div>
+          <div class="cnt"><b>已更新</b></div>
+        </div>
+        <div class="day">
+          <div class="d">昨天<small>已归档</small></div>
+          <div class="t">大赛片段二次传播梳理<em>哪些内容被反复引用，哪些已降温</em></div>
+          <div class="cnt">已归档</div>
+        </div>
+        <div class="day">
+          <div class="d">前日<small>已归档</small></div>
+          <div class="t">讨论走向与网友态度分布<em>支持、质疑与围观三类声音并列</em></div>
+          <div class="cnt">已归档</div>
+        </div>
+        <div class="day">
+          <div class="d">更早<small>合集</small></div>
+          <div class="t">往期 r星每日大赛吃瓜 条目<em>保留原样，便于对照前后变化</em></div>
+          <div class="cnt">持续保留</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="talk">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>网友讨论</h2>
+        <span class="sub">围观者的真实说法</span>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="discuss">
+        <div class="quote">
+          <div class="who">
+            <span class="avatar" style="background:linear-gradient(140deg,#ffcc4d,#ffb347)">瓜</span>
+            <div><b>只看不吵的围观者</b><small>常来翻合集</small></div>
+          </div>
+          <p>“我最怕的是点进去全是二手转述。这里把 r星每日大赛吃瓜 的条目按天排好，看时间线就知道谁先谁后，不用自己在评论区里拼。”</p>
+        </div>
+        <div class="quote">
+          <div class="who">
+            <span class="avatar" style="background:linear-gradient(140deg,#57d9a3,#3fbf8b)">查</span>
+            <div><b>爱核对出处的读者</b><small>关注信息准确度</small></div>
+          </div>
+          <p>“大赛内容传得快，错得也快。合集里把没确认的地方直接标出来，比硬给一个答案更让人放心，这也是我继续看 r星每日大赛吃瓜 的原因。”</p>
+        </div>
+        <div class="quote">
+          <div class="who">
+            <span class="avatar" style="background:linear-gradient(140deg,#ff7a59,#ff5f3d)">追</span>
+            <div><b>每天追更的老读者</b><small>习惯从旧合集回看</small></div>
+          </div>
+          <p>“有时候一个大赛话题要烧好几天，单看一天看不出全貌。旧合集留着，前后一对照，哪句是新增的、哪句是重复的，一眼就能分辨。”</p>
+        </div>
+        <div class="quote">
+          <div class="who">
+            <span class="avatar" style="background:linear-gradient(140deg,#7ea8ff,#5f8cf0)">新</span>
+            <div><b>刚接触的新访客</b><small>第一次来找入口</small></div>
+          </div>
+          <p>“朋友发了截图让我自己去看，搜到 r星每日大赛吃瓜 之后，先看今日看点，再往下翻当天合集，基本十几分钟就能把来龙去脉弄清楚。”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>吃瓜说明</h2>
+        <span class="sub">这份合集怎么读更省事</span>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="prose">
+        <h3>先看时间，再看立场</h3>
+        <p>吃瓜最怕顺序颠倒。r星每日大赛吃瓜 的每个条目都尽量按发生时间排列，先发生的在上，后加入的在下。把顺序理顺，很多看似矛盾的说法会自动对齐——往往不是谁在撒谎，而是各自看到的是不同阶段的画面。</p>
+        <h3>区分"发生了什么"与"大家怎么看"</h3>
+        <p>前者是事实层，后者是讨论层。合集把两者分开放：事实层只写可确认的部分，讨论层则并列不同解读。遇到只有一方说法、没有旁证的内容，会明确标注来源单一，不把它当成定论写进事实层。</p>
+        <h3>转发不等于证实</h3>
+        <p>一条大赛内容被转得越多，越容易被当成真的。但转发量只说明它传播广，不说明它准确。r星每日大赛吃瓜 在整理时会尽量回溯最早发布方向，找不到源头的，宁可留白，也不补一个看起来合理的解释。</p>
+        <h3>旧内容同样值得回看</h3>
+        <p>很多大赛话题不是一天结束的。隔几天回看旧合集，常能发现当初被忽略的细节，也能看出哪些说法后来被推翻、哪些被补充。合集保留往期条目，正是为了让这种对照成为可能。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="download">
+      <div>
+        <h2>离线留存每日吃瓜合集</h2>
+        <p>把当天的 r星每日大赛吃瓜 条目保存到本地，断网时也能翻看，适合习惯先存后读的读者。文件内容与页面当日合集保持一致。</p>
+      </div>
+      <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="logo-text">r星每日大赛吃瓜</span>
+        <p>按日归档大赛热点与网友讨论，事实与观点分层呈现，未确认内容明确标注。r星每日大赛吃瓜 持续更新，旧合集长期保留。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#today">今日看点</a>
+        <a href="#daily">每日合集</a>
+        <a href="#talk">网友讨论</a>
+        <a href="#about">吃瓜说明</a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+    <div class="copyright">本页为 r星每日大赛吃瓜 主题首页，内容以整理与呈现讨论为主，不替代任何原始信息源。</div>
+  </div>
+</footer>
+
+</body>
+</html>
