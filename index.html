@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91传媒-内容浏览与栏目导航_91传媒热点内容速览</title>
+<meta name="description" content="91传媒首页，汇集热点内容速览、栏目导航与内容浏览入口。围绕91传媒的栏目结构、内容类型与访问路径展开，帮助访问者快速了解并进入感兴趣的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111318'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b544' stroke-width='4'/%3E%3Cpath d='M24 32h16M32 24v16' stroke='%23f2b544' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#111318;
+  --ink-2:#1b1e26;
+  --paper:#f6f4ef;
+  --paper-2:#ffffff;
+  --line:#dcd7cc;
+  --gold:#c98a1a;
+  --gold-soft:#f2b544;
+  --text:#26292f;
+  --muted:#6a6e77;
+  --radius:14px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{line-height:1.3;margin:0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+
+/* header */
+.site-header{
+  background:var(--ink);
+  color:#f3f1ea;
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid #2a2d36;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:68px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.brand-mark{
+  width:38px;height:38px;border-radius:10px;
+  background:#1f232c;display:grid;place-items:center;
+  border:1px solid #333846;
+}
+.brand-text{
+  font-size:1.16rem;font-weight:700;letter-spacing:.06em;
+  color:#f6f4ef;
+}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:.9rem;color:#c9c6bd;padding:7px 13px;border-radius:999px;
+  transition:background .2s,color .2s;
+}
+.nav a:hover{background:#23272f;color:#fff;}
+.header-cta{
+  font-size:.86rem;font-weight:600;white-space:nowrap;
+  background:var(--gold);color:#1a1405;
+  padding:8px 16px;border-radius:999px;
+}
+.header-cta:hover{background:var(--gold-soft);}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(1200px 420px at 85% -10%, rgba(201,138,26,.22), transparent 60%),
+    linear-gradient(180deg,#111318 0%,#181c24 100%);
+  color:#eeece5;
+  padding:64px 0 72px;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;letter-spacing:.16em;color:var(--gold-soft);
+  border:1px solid rgba(242,181,68,.4);border-radius:999px;
+  padding:5px 13px;margin-bottom:20px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(2.1rem,5vw,3.35rem);
+  font-weight:800;letter-spacing:.02em;
+  color:#fff;
+}
+.hero-sub{
+  margin-top:18px;font-size:1.02rem;color:#b9b6ad;max-width:34em;
+}
+.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:600;font-size:.95rem;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--gold);color:#1a1405;}
+.btn-primary:hover{background:var(--gold-soft);}
+.btn-ghost{border-color:#3c414d;color:#e9e6dd;}
+.btn-ghost:hover{border-color:var(--gold-soft);color:#fff;}
+.btn[aria-disabled="true"]{opacity:.75;pointer-events:none;cursor:default;}
+.hero-facts{
+  display:flex;gap:34px;margin-top:38px;flex-wrap:wrap;
+  border-top:1px solid #2c303a;padding-top:22px;
+}
+.fact b{display:block;font-size:1.32rem;color:var(--gold-soft);font-weight:700;}
+.fact span{font-size:.82rem;color:#9c9a93;letter-spacing:.04em;}
+
+.hero-art{
+  background:#1b1f28;border:1px solid #2e333f;border-radius:22px;
+  padding:24px;
+}
+.art-bar{display:flex;gap:6px;margin-bottom:18px;}
+.art-bar i{width:9px;height:9px;border-radius:50%;background:#3a3f4c;display:block;}
+.art-bar i:first-child{background:var(--gold);}
+.art-row{display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+.art-thumb{
+  width:52px;height:52px;border-radius:10px;background:#252a35;flex-shrink:0;
+  display:grid;place-items:center;
+}
+.art-line{flex:1;}
+.art-line .l1{height:9px;border-radius:5px;background:#343a47;width:78%;margin-bottom:7px;}
+.art-line .l2{height:7px;border-radius:4px;background:#2a2f3a;width:52%;}
+.art-tag{
+  margin-top:18px;display:flex;gap:8px;flex-wrap:wrap;
+}
+.art-tag span{
+  font-size:.72rem;color:#b6b3aa;border:1px solid #343a47;
+  padding:4px 10px;border-radius:999px;
+}
+
+/* section base */
+section{padding:64px 0;}
+.section-head{margin-bottom:34px;max-width:44em;}
+.section-head .kicker{
+  font-size:.78rem;letter-spacing:.18em;color:var(--gold);
+  font-weight:700;text-transform:uppercase;margin-bottom:10px;
+}
+.section-head h2{
+  font-size:clamp(1.45rem,3vw,1.95rem);font-weight:750;color:var(--ink);
+}
+.section-head p{margin:12px 0 0;color:var(--muted);font-size:.97rem;}
+
+/* entry cards */
+.entries{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px 24px;
+  display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(20,22,28,.09);border-color:#c8bfa8;}
+.card-icon{
+  width:42px;height:42px;border-radius:11px;background:#fdf0d5;
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.card h3{font-size:1.06rem;font-weight:700;color:var(--ink);margin-bottom:9px;}
+.card p{font-size:.9rem;color:var(--muted);margin:0 0 18px;flex:1;}
+.card-link{
+  font-size:.86rem;font-weight:600;color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.card-link:hover{color:#9c6a11;}
+
+/* featured list */
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.feature{
+  display:flex;gap:16px;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px;
+}
+.feature-no{
+  font-size:1.5rem;font-weight:800;color:#e4d8bf;line-height:1;flex-shrink:0;
+  width:34px;
+}
+.feature h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.feature p{font-size:.88rem;color:var(--muted);margin:0;}
+.feature-meta{
+  font-size:.76rem;color:#9a9488;margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;
+}
+
+/* explain */
+.explain{background:var(--ink);color:#dedbd2;}
+.explain .section-head h2{color:#fff;}
+.explain .section-head p{color:#a6a39a;}
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.explain p{font-size:.95rem;color:#b8b5ac;margin:0 0 16px;}
+.explain strong{color:var(--gold-soft);font-weight:600;}
+.pillars{display:grid;gap:16px;}
+.pillar{
+  border:1px solid #2e333f;border-radius:12px;padding:18px 20px;background:#171a21;
+}
+.pillar h3{font-size:.96rem;color:#f0ede4;margin-bottom:6px;font-weight:650;}
+.pillar p{font-size:.86rem;color:#8f8c84;margin:0;}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step;}
+.step{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:1.9rem;font-weight:800;color:#e8dcc3;display:block;margin-bottom:10px;
+  letter-spacing:.02em;
+}
+.step h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.step p{font-size:.88rem;color:var(--muted);margin:0;}
+
+/* faq */
+.faq-list{display:grid;gap:12px;max-width:56em;}
+details{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;
+}
+details[open]{border-color:#d5c39c;}
+summary{
+  cursor:pointer;font-weight:650;color:var(--ink);font-size:.98rem;
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--gold);font-size:1.2rem;font-weight:700;}
+details[open] summary::after{content:"–";}
+details p{font-size:.9rem;color:var(--muted);margin:12px 0 0;}
+
+/* footer */
+.site-footer{background:#0d0f13;color:#8f8c84;padding:46px 0 34px;}
+.footer-top{
+  display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  border-bottom:1px solid #23272f;padding-bottom:28px;margin-bottom:22px;
+}
+.footer-brand{display:flex;align-items:center;gap:11px;}
+.footer-brand .brand-text{font-size:1.06rem;color:#f2efe8;}
+.footer-brand p{font-size:.84rem;color:#77746d;margin:6px 0 0;}
+.footer-nav{display:flex;gap:22px;flex-wrap:wrap;font-size:.86rem;}
+.footer-nav a:hover{color:var(--gold-soft);}
+.copyright{font-size:.8rem;color:#66635d;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-art{order:-1;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .feature-list,.explain-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .header-inner{min-height:60px;gap:10px;}
+  .nav{display:none;}
+  .hero{padding:40px 0 50px;}
+  .hero-art{display:none;}
+  .hero-facts{gap:22px;}
+  .card-grid{grid-template-columns:1fr;}
+  section{padding:46px 0;}
+  .wrap{padding:0 18px;}
+  .footer-nav{gap:16px;font-size:.82rem;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="91传媒 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="8.4" stroke="#f2b544" stroke-width="2"/>
+          <path d="M8 12h8M12 8v8" stroke="#f2b544" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">91传媒</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#entries">栏目入口</a>
+      <a href="#featured">热点速览</a>
+      <a href="#about">内容说明</a>
+      <a href="#start">浏览路径</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="header-cta" href="#entries">进入栏目</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">内容浏览首页</span>
+        <h1>91传媒</h1>
+        <p class="hero-sub">91传媒 是一个以内容浏览与栏目导航为主的页面入口。这里按内容类型划分栏目，把热点速览、栏目结构和访问路径集中呈现，方便访问者先了解全貌，再进入具体内容。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entries">浏览栏目</a>
+          <a class="btn btn-ghost" href="#featured">查看热点速览</a>
+        </div>
+        <div class="hero-facts">
+          <div class="fact"><b>5</b><span>主要栏目分区</span></div>
+          <div class="fact"><b>6</b><span>热点速览条目</span></div>
+          <div class="fact"><b>3</b><span>步浏览路径</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-bar"><i></i><i></i><i></i></div>
+        <div class="art-row">
+          <div class="art-thumb">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="13" rx="2" stroke="#c98a1a" stroke-width="1.6"/><path d="M10 9.5l5 2.5-5 2.5z" fill="#c98a1a"/></svg>
+          </div>
+          <div class="art-line"><div class="l1"></div><div class="l2"></div></div>
+        </div>
+        <div class="art-row">
+          <div class="art-thumb">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h11M4 18h7" stroke="#8f96a3" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="art-line"><div class="l1" style="width:64%"></div><div class="l2" style="width:40%"></div></div>
+        </div>
+        <div class="art-row">
+          <div class="art-thumb">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.5" stroke="#8f96a3" stroke-width="1.6"/><path d="M12 8v4.5l3 1.7" stroke="#8f96a3" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="art-line"><div class="l1" style="width:70%"></div><div class="l2" style="width:46%"></div></div>
+        </div>
+        <div class="art-tag"><span>栏目导航</span><span>热点速览</span><span>内容类型</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRIES -->
+  <section class="entries" id="entries">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">栏目入口</div>
+        <h2>按内容类型分区的栏目入口</h2>
+        <p>91传媒 的内容按类型拆分，每个栏目承担不同的浏览任务。访问者可以先选栏目，再决定是否深入具体内容。</p>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="#c98a1a" stroke-width="1.7"/><path d="M8 9h8M8 13h5" stroke="#c98a1a" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>图文内容区</h3>
+          <p>以文字与图片组合呈现的内容集合，适合快速浏览要点，再决定是否细读。条目按更新顺序排列。</p>
+          <a class="card-link" href="#featured">查看速览 →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="#c98a1a" stroke-width="1.7"/><path d="M10 10l4.5 2-4.5 2z" fill="#c98a1a"/></svg>
+          </div>
+          <h3>视频内容区</h3>
+          <p>以视频为主要载体的内容分区，突出播放与选集入口。页面只呈现列表与跳转，不在此处直接播放。</p>
+          <a class="card-link" href="#featured">查看速览 →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#c98a1a" stroke-width="1.7"/><path d="M5 19c1.4-3.2 4-4.8 7-4.8s5.6 1.6 7 4.8" stroke="#c98a1a" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>人物与专栏</h3>
+          <p>围绕固定作者或主题形成的连续内容，便于按人或按主题追看同一系列的多期条目。</p>
+          <a class="card-link" href="#featured">查看速览 →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2" stroke="#c98a1a" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>热点排行</h3>
+          <p>按浏览与讨论热度排列的条目清单，用于快速判断近期哪些内容被更多访问者关注。</p>
+          <a class="card-link" href="#featured">查看速览 →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M5 6h14M5 12h14M5 18h9" stroke="#c98a1a" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>分类索引</h3>
+          <p>把栏目与内容类型以索引形式集中列出，适合已经明确方向、希望直达目标分区的访问者。</p>
+          <a class="card-link" href="#start">查看路径 →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#c98a1a" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>综合入口</h3>
+          <p>把上述分区汇总到一处，作为 91传媒 的默认起点。新访问者建议从综合入口开始浏览。</p>
+          <a class="card-link" href="#start">开始浏览 →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="featured">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">热点速览</div>
+        <h2>本期六条热点速览</h2>
+        <p>下列条目按内容类型整理，每条只给出一句概括与所属栏目，完整内容需进入对应栏目查看。</p>
+      </div>
+      <div class="feature-list">
+
+        <article class="feature">
+          <div class="feature-no">01</div>
+          <div>
+            <h3>图文栏目更新节奏说明</h3>
+            <p>说明图文区按日更新的排布方式，以及条目在列表中的位置规则。</p>
+            <div class="feature-meta"><span>图文内容区</span><span>栏目规则</span></div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-no">02</div>
+          <div>
+            <h3>视频区分集与播放入口</h3>
+            <p>梳理视频内容的选集方式与播放入口位置，帮助访问者减少寻找步骤。</p>
+            <div class="feature-meta"><span>视频内容区</span><span>浏览路径</span></div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-no">03</div>
+          <div>
+            <h3>专栏系列的连续阅读方式</h3>
+            <p>介绍如何按作者或主题连续查看同一系列的多期内容。</p>
+            <div class="feature-meta"><span>人物与专栏</span><span>阅读方式</span></div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-no">04</div>
+          <div>
+            <h3>热度排行的计算口径</h3>
+            <p>排行依据浏览与讨论两个维度的相对高低，不代表内容质量的绝对评价。</p>
+            <div class="feature-meta"><span>热点排行</span><span>排行说明</span></div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-no">05</div>
+          <div>
+            <h3>分类索引的检索思路</h3>
+            <p>按类型、按更新时间两条线索组织索引，适合目标明确的访问者。</p>
+            <div class="feature-meta"><span>分类索引</span><span>检索思路</span></div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-no">06</div>
+          <div>
+            <h3>新访问者的首选入口</h3>
+            <p>建议先看综合入口，再根据兴趣分流到图文或视频栏目。</p>
+            <div class="feature-meta"><span>综合入口</span><span>访问建议</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="explain" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">内容说明</div>
+        <h2>91传媒 的内容如何组织</h2>
+        <p>理解栏目结构，比记住单个条目更有用。下面从三个层面说明页面内容的组织方式。</p>
+      </div>
+      <div class="explain-grid">
+        <div>
+          <p>91传媒 把内容先按载体分为图文与视频两类，再按作者与主题划出专栏，最后用排行与索引把分散条目串起来。这样做的目的是让访问者无论从哪个入口进入，都能找到下一步该去的位置。</p>
+          <p><strong>载体优先</strong>：图文与视频的阅读方式不同，分开列出可以减少误点。视频区强调选集与播放，图文区强调浏览与细读。</p>
+          <p><strong>主题串联</strong>：专栏把同一作者或同一主题的多期内容放在一起，适合连续阅读，也便于判断某一方向是否值得继续关注。</p>
+          <p><strong>排序辅助</strong>：排行与索引不产生新内容，只改变内容的呈现顺序，帮助访问者在信息量较大时快速缩小范围。</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>栏目边界清楚</h3>
+            <p>每个栏目只承担一类内容，避免同一页面内出现多种阅读节奏。</p>
+          </div>
+          <div class="pillar">
+            <h3>入口层级收敛</h3>
+            <p>首页只保留必要入口，深层内容通过栏目与索引进入，减少首屏负担。</p>
+          </div>
+          <div class="pillar">
+            <h3>信息与操作分离</h3>
+            <p>说明性文字与跳转入口分开呈现，访问者可以先读再点，不必急于跳转。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="start">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">浏览路径</div>
+        <h2>三步完成一次有效浏览</h2>
+        <p>面对内容较多的首页，按固定顺序浏览通常比随意点击更省时间。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先看栏目划分</h3>
+          <p>在栏目入口区确认图文、视频、专栏、排行、索引五个分区的差别，选定一个方向。</p>
+        </div>
+        <div class="step">
+          <h3>再看热点速览</h3>
+          <p>用六条速览快速判断近期内容的分布，避免在单个栏目里反复翻找。</p>
+        </div>
+        <div class="step">
+          <h3>最后进入具体条目</h3>
+          <p>由栏目或索引跳转到目标内容。若目标不明确，回到综合入口重新分流。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fff;border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">常见问题</div>
+        <h2>访问 91传媒 前可能关心的问题</h2>
+        <p>以下回答只针对本页面的结构与入口，不涉及具体条目的内容判断。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>首页为什么只放速览，不直接放完整内容？</summary>
+          <p>首页承担分流任务。把完整内容留在栏目内，可以让首屏更快加载，也让访问者在进入前先了解内容类型与分布，减少无关点击。</p>
+        </details>
+        <details>
+          <summary>栏目之间的内容会重复出现吗？</summary>
+          <p>同一内容可能同时出现在所属栏目与排行中，但两处的呈现目的不同：栏目按类型归档，排行按热度排序。重复出现不改变条目本身。</p>
+        </details>
+        <details>
+          <summary>热度排行能否代表内容质量？</summary>
+          <p>不能。排行反映的是浏览与讨论的相对高低，受更新时间和入口位置影响，只能作为筛选线索，不宜作为质量结论。</p>
+        </details>
+        <details>
+          <summary>找不到想看的内容时怎么办？</summary>
+          <p>先回到分类索引，按类型或更新时间缩小范围；若仍无法定位，再从综合入口重新分流，通常比逐页翻找更快。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="8.4" stroke="#f2b544" stroke-width="2"/>
+            <path d="M8 12h8M12 8v8" stroke="#f2b544" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div>
+          <span class="brand-text">91传媒</span>
+          <p>内容浏览与栏目导航首页</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="页尾导航">
+        <a href="#entries">栏目入口</a>
+        <a href="#featured">热点速览</a>
+        <a href="#about">内容说明</a>
+        <a href="#start">浏览路径</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="copyright">
+      <span>91传媒 · 本页内容围绕栏目结构与访问路径展开。</span>
+      <span>栏目划分与排行口径以页面说明为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
