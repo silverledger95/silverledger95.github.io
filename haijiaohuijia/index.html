@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角回家地址-海角回家地址最新发布_海角地址导航与访问入口</title>
+<meta name="description" content="海角回家地址页面说明当前可用的地址发布方式、访问入口与备用方案，帮助访客找到海角最新回家地址，并了解域名变动与访问异常的常见处理路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b2a'/%3E%3Cpath d='M16 40 L32 18 L48 40' fill='none' stroke='%23f2b544' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 46 H52' stroke='%23f2b544' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='52' r='3' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#22384d;
+    --paper:#f6f4ef;
+    --card:#ffffff;
+    --line:#e2ddd2;
+    --gold:#f2b544;
+    --gold-deep:#c8892a;
+    --teal:#2c6e6a;
+    --muted:#5d6b76;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(13,27,42,.08);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* 页头 */
+  header.site{
+    background:var(--ink);
+    color:#fff;
+    border-bottom:3px solid var(--gold);
+  }
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:16px 0;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:46px;height:46px;flex:0 0 46px;
+    border-radius:12px;background:rgba(242,181,68,.14);
+    display:grid;place-items:center;
+  }
+  .brand-name{
+    font-size:19px;font-weight:700;letter-spacing:.5px;line-height:1.3;
+  }
+  .brand-sub{
+    font-size:12px;color:#9fb2c2;letter-spacing:1.5px;
+  }
+  nav.main ul{
+    list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap;
+  }
+  nav.main a{
+    font-size:14.5px;color:#d7e2ea;padding:6px 0;border-bottom:2px solid transparent;
+    transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{color:var(--gold);border-bottom-color:var(--gold);}
+
+  /* 首屏 */
+  .hero{
+    background:
+      radial-gradient(circle at 82% 18%,rgba(242,181,68,.16),transparent 45%),
+      linear-gradient(160deg,#0d1b2a 0%,#132a3d 60%,#1b3a4b 100%);
+    color:#fff;
+    padding:54px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;
+    border-radius:50%;border:1px dashed rgba(242,181,68,.28);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:2px;color:var(--gold);
+    background:rgba(242,181,68,.1);
+    border:1px solid rgba(242,181,68,.32);
+    padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(28px,4.2vw,42px);
+    line-height:1.25;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+  }
+  h1 .hl{color:var(--gold);}
+  .hero p.lead{
+    margin:0 0 26px;color:#c9d6e0;font-size:16.5px;max-width:34em;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:10px;font-size:15px;font-weight:600;
+    border:1px solid transparent;cursor:pointer;transition:.2s;
+  }
+  .btn-primary{background:var(--gold);color:#20160a;}
+  .btn-primary:hover{background:#ffc75e;}
+  .btn-ghost{border-color:rgba(255,255,255,.34);color:#fff;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+  .hero-panel{
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:22px;
+    backdrop-filter:blur(2px);
+  }
+  .hero-panel h2{
+    font-size:14px;margin:0 0 14px;color:var(--gold);letter-spacing:1px;font-weight:600;
+  }
+  .status-list{list-style:none;margin:0;padding:0;font-size:14px;}
+  .status-list li{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.14);color:#cfdae3;
+  }
+  .status-list li:last-child{border-bottom:none;}
+  .dot{color:#7fd1a6;font-weight:600;}
+  .dot.warn{color:var(--gold);}
+
+  /* 通用区块 */
+  section{padding:62px 0;}
+  .sec-head{margin-bottom:30px;max-width:46em;}
+  .sec-tag{
+    font-size:12.5px;letter-spacing:2.5px;color:var(--gold-deep);font-weight:700;
+    text-transform:uppercase;
+  }
+  h2.sec-title{
+    font-size:clamp(22px,2.6vw,28px);margin:8px 0 12px;line-height:1.35;font-weight:800;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:15.5px;}
+
+  /* 地址卡 */
+  .addr-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+  }
+  .addr-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:10px;transition:.2s;
+  }
+  .addr-card:hover{transform:translateY(-3px);border-color:#d6cdb9;}
+  .addr-card .k{
+    display:flex;align-items:center;gap:8px;font-size:13px;color:var(--teal);font-weight:700;
+  }
+  .addr-card h3{font-size:17px;margin:0;font-weight:700;}
+  .addr-card p{margin:0;font-size:14.5px;color:var(--muted);}
+  .addr-card .fake-url{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13.5px;background:#f3f1ea;border:1px dashed #d8d2c4;
+    border-radius:8px;padding:8px 10px;color:#4a5763;word-break:break-all;
+  }
+  .tip{
+    background:#fdf6e6;border-left:4px solid var(--gold);
+    border-radius:8px;padding:14px 18px;font-size:14.5px;color:#6b5320;margin-top:24px;
+  }
+
+  /* 备用灰底 */
+  .alt{background:#eef0ec;}
+  .steps{
+    list-style:none;margin:0;padding:0;counter-reset:s;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+  }
+  .steps li{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 22px 22px;position:relative;box-shadow:var(--shadow);
+  }
+  .steps li::before{
+    counter-increment:s;content:counter(s,decimal-leading-zero);
+    font-size:13px;font-weight:800;color:var(--gold-deep);letter-spacing:1px;
+  }
+  .steps h3{font-size:16.5px;margin:6px 0 8px;}
+  .steps p{margin:0;font-size:14.5px;color:var(--muted);}
+
+  /* 双栏内容 */
+  .two-col{
+    display:grid;grid-template-columns:1.35fr .9fr;gap:40px;align-items:start;
+  }
+  .article p{margin:0 0 16px;color:#33424f;font-size:15.8px;}
+  .article h3{font-size:18px;margin:26px 0 10px;font-weight:700;}
+  .side{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+  }
+  .side h3{font-size:16px;margin:0 0 14px;}
+  .faq{list-style:none;margin:0;padding:0;}
+  .faq li{padding:12px 0;border-bottom:1px solid #efece4;font-size:14.5px;}
+  .faq li:last-child{border-bottom:none;padding-bottom:0;}
+  .faq strong{display:block;color:var(--ink);margin-bottom:4px;font-size:14.5px;}
+  .faq span{color:var(--muted);}
+
+  /* 下载区 */
+  .download{
+    background:linear-gradient(135deg,#132a3d,#1d4152);
+    color:#fff;border-radius:18px;padding:38px;
+    display:grid;grid-template-columns:1.4fr auto;gap:26px;align-items:center;
+  }
+  .download h2{font-size:23px;margin:0 0 10px;}
+  .download p{margin:0;color:#c3d2dc;font-size:15px;}
+  .btn-disabled{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);
+    color:#e8eef3;pointer-events:none;opacity:.85;
+  }
+  .btn-disabled small{display:block;font-weight:400;font-size:11.5px;color:#a9bccb;}
+
+  /* 页尾 */
+  footer.site{
+    background:var(--ink);color:#a9bccb;padding:40px 0 30px;font-size:14px;
+    border-top:3px solid var(--gold);
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;}
+  footer h4{color:#fff;font-size:15px;margin:0 0 12px;font-weight:700;}
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer li{margin-bottom:8px;}
+  footer a:hover{color:var(--gold);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:18px;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#7f95a6;
+  }
+
+  @media (max-width:860px){
+    .hero-grid,.two-col,.download{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    section{padding:48px 0;}
+    .download{padding:26px;}
+  }
+  @media (max-width:600px){
+    .topbar{flex-direction:column;align-items:flex-start;}
+    nav.main ul{gap:16px;}
+    .foot-grid{grid-template-columns:1fr;}
+    h1{font-size:26px;}
+    .hero{padding:40px 0 46px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 64 64" role="img">
+          <path d="M16 40 L32 18 L48 40" fill="none" stroke="#f2b544" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 46 H52" stroke="#f2b544" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div>
+        <div class="brand-name">海角回家地址</div>
+        <div class="brand-sub">ADDRESS · HOME</div>
+      </div>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#address">当前地址</a></li>
+        <li><a href="#method">获取方式</a></li>
+        <li><a href="#explain">域名说明</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#download">客户端</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">地址发布 · 访问入口</span>
+        <h1>海角回家地址</h1>
+        <p class="lead">域名一旦发生调整，旧链接会失效，直接收藏网页往往找不到入口。本页集中说明海角回家地址的发布方式、核对要点与备用路径，帮助你在地址变动后尽快回到页面。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#address">查看当前地址</a>
+          <a class="btn btn-ghost" href="#method">了解获取方式</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="地址状态概览">
+        <h2>访问状态概览</h2>
+        <ul class="status-list">
+          <li><span>页面发布方式</span><span class="dot">持续更新</span></li>
+          <li><span>备用线路</span><span class="dot">已保留</span></li>
+          <li><span>域名变动</span><span class="dot warn">以发布页为准</span></li>
+          <li><span>移动端适配</span><span class="dot">支持</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 当前地址 -->
+  <section id="address">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">Address</span>
+        <h2 class="sec-title">海角回家地址的几种入口形式</h2>
+        <p>地址变动后，通常通过发布页、备用线路与固定入口三种形式回到站点。下面按使用场景分别说明。</p>
+      </div>
+      <div class="addr-grid">
+        <article class="addr-card">
+          <span class="k">◆ 主入口</span>
+          <h3>地址发布页</h3>
+          <p>每次域名调整后，发布页会同步更新可用入口，是获取海角回家地址最稳妥的方式。</p>
+          <div class="fake-url">发布页链接以实际公告为准</div>
+        </article>
+        <article class="addr-card">
+          <span class="k">◆ 备用</span>
+          <h3>备用线路</h3>
+          <p>主线路拥堵或临时不可用时，备用线路可继续访问，两者内容保持一致。</p>
+          <div class="fake-url">备用线路随发布页一并更新</div>
+        </article>
+        <article class="addr-card">
+          <span class="k">◆ 固定</span>
+          <h3>收藏与记录</h3>
+          <p>把发布页加入书签，比收藏具体域名更可靠，可避免域名更换后链接失效。</p>
+          <div class="fake-url">建议收藏发布页而非具体域名</div>
+        </article>
+      </div>
+      <p class="tip">提示：本页不直接罗列域名，任何地址都以发布页公告为准。遇到要求付费、输入账号密码才能查看地址的页面，请先核实来源。</p>
+    </div>
+  </section>
+
+  <!-- 获取方式 -->
+  <section id="method" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">How To</span>
+        <h2 class="sec-title">查找海角回家地址的四个步骤</h2>
+        <p>按顺序操作，基本可以覆盖绝大多数地址失效的情况。</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>确认链接是否失效</h3>
+          <p>先刷新页面并切换网络，排除本地网络或缓存导致的打不开，再判断是否为域名问题。</p>
+        </li>
+        <li>
+          <h3>回到发布页核对</h3>
+          <p>通过已保存的发布页查看最新公告，比对当前域名与公告内容是否一致。</p>
+        </li>
+        <li>
+          <h3>尝试备用线路</h3>
+          <p>主线路无法加载时切换备用线路，注意口令与页面内容应与主线路相同。</p>
+        </li>
+        <li>
+          <h3>更新收藏记录</h3>
+          <p>确认可用后，把新的海角回家地址记录到书签，并保留发布页作为长期入口。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 域名说明 -->
+  <section id="explain">
+    <div class="wrap two-col">
+      <div class="article">
+        <span class="sec-tag">Domain</span>
+        <h2 class="sec-title">为什么海角回家地址会发生变化</h2>
+        <p>这类站点通常不会长期固定在同一个域名上。域名到期、解析调整或访问链路变化，都可能让原来的链接突然打不开。因此，“回家地址”本质上是一套持续维护的入口机制，而不是一个永久不变的网址。</p>
+        <h3>地址变化后的典型表现</h3>
+        <p>常见情况包括：页面长时间空白、提示无法连接、跳转到无关页面，或者能打开但内容明显异常。前两种多半是域名层面的问题，第三种则要警惕仿冒页面，避免在陌生页面输入任何信息。</p>
+        <h3>发布页存在的意义</h3>
+        <p>发布页的作用是把“找地址”这件事集中到一个相对稳定的位置。只要发布页本身可访问，海角回家地址的更新就能被同步获取。这也是为什么建议收藏发布页，而不是记住某一串具体域名。</p>
+        <p>需要说明的是，地址的有效性会随时间变化，本页描述的是一般规律与查找路径，不承诺任何具体域名的长期可用。实际访问时，请以发布页当时的公告为准。</p>
+      </div>
+      <aside class="side" id="faq">
+        <h3>常见问题</h3>
+        <ul class="faq">
+          <li><strong>旧地址还能用吗？</strong><span>域名更换后旧地址通常失效，建议以发布页公告为准。</span></li>
+          <li><strong>备用线路内容一样吗？</strong><span>备用线路与主线路指向同一站点，内容应当一致。</span></li>
+          <li><strong>为什么建议收藏发布页？</strong><span>发布页相对稳定，能持续提供最新的海角回家地址。</span></li>
+          <li><strong>打不开一定是域名问题吗？</strong><span>不一定，先排查本地网络与缓存，再判断是否为域名变动。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>客户端与地址同步</h2>
+          <p>客户端安装包与地址更新说明分开维护。地址请以发布页为准，安装包在正式发布后提供下载。</p>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          下载
+          <small>暂未开放</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>海角回家地址</h4>
+        <p style="margin:0;max-width:30em;">集中说明地址发布方式、备用线路与访问异常的排查路径，帮助访客在域名变动后重新找到入口。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#address">当前地址</a></li>
+          <li><a href="#method">获取方式</a></li>
+          <li><a href="#explain">域名说明</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提醒</h4>
+        <ul>
+          <li>地址以发布页公告为准</li>
+          <li>勿在陌生页面输入信息</li>
+          <li>建议收藏发布页</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 海角回家地址 · 地址发布说明页</span>
+      <span>页面内容随发布情况更新</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
