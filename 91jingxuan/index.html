@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91精选网站-精选内容聚合_热门推荐与站点导航</title>
+<meta name="description" content="91精选网站是一个内容聚合与导航入口页面，围绕精选推荐、热门内容、分类浏览与站点导航组织信息，帮助访客快速了解91精选网站的内容范围与使用方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316131f'/%3E%3Cpath d='M20 44V20h9a8 8 0 0 1 0 16h-9' stroke='%23ff9f45' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='44' cy='24' r='5' fill='%23ff9f45'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#16131f;
+  --ink-soft:#3c3748;
+  --muted:#6f687d;
+  --line:#e6e1ee;
+  --paper:#faf8f4;
+  --card:#ffffff;
+  --accent:#e2732e;
+  --accent-soft:#fdf0e5;
+  --violet:#4a3a72;
+  --radius:16px;
+  --maxw:1140px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink-soft);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{color:var(--ink);line-height:1.3;margin:0;}
+p{margin:0 0 14px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:12px;top:12px;background:#fff;padding:8px 14px;border-radius:8px;z-index:99;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,248,244,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:70px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--ink);font-size:1.06rem;letter-spacing:.02em;}
+.brand svg{flex:0 0 auto;display:block;}
+.nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap;}
+.nav-links a{
+  padding:7px 13px;border-radius:999px;font-size:.94rem;color:var(--ink-soft);
+  transition:background .18s,color .18s;
+}
+.nav-links a:hover,.nav-links a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none;}
+.nav-cta{
+  background:var(--ink);color:#fff !important;padding:8px 18px !important;border-radius:999px;
+  font-weight:600;
+}
+.nav-cta:hover,.nav-cta:focus-visible{background:var(--accent) !important;color:#fff !important;}
+
+/* hero */
+.hero{padding:54px 0 20px;}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:38px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:700;margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:block;}
+h1{font-size:clamp(1.85rem,4.2vw,2.85rem);letter-spacing:-.01em;font-weight:800;}
+.hero p.lead{font-size:1.04rem;color:var(--ink-soft);margin-top:16px;max-width:34em;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:999px;font-weight:600;font-size:.96rem;
+  border:1px solid transparent;transition:transform .16s,background .18s,box-shadow .18s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px -10px rgba(226,115,46,.9);}
+.btn-primary:hover{background:#c9621f;transform:translateY(-1px);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.hero-art{
+  background:linear-gradient(160deg,#fff 0%,#f4eee6 100%);
+  border:1px solid var(--line);border-radius:24px;padding:22px;
+  box-shadow:0 24px 50px -34px rgba(22,19,31,.45);
+}
+.hero-art svg{width:100%;height:auto;display:block;}
+.hero-art figcaption{font-size:.82rem;color:var(--muted);margin-top:12px;text-align:center;}
+
+/* stats strip */
+.stat-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin:38px 0 0;padding:0;list-style:none;
+}
+.stat-strip li{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;
+}
+.stat-strip strong{display:block;color:var(--ink);font-size:1.12rem;font-weight:700;}
+.stat-strip span{font-size:.88rem;color:var(--muted);}
+
+/* sections */
+section{padding:56px 0;}
+.section-head{max-width:44em;margin-bottom:28px;}
+.section-head h2{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;}
+.section-head p{margin-top:10px;color:var(--muted);font-size:.97rem;}
+.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:8px;}
+
+/* featured cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0;margin:0;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 22px 44px -32px rgba(22,19,31,.55);border-color:#d9d0e6;}
+.card .tag{
+  align-self:flex-start;font-size:.74rem;font-weight:700;letter-spacing:.06em;
+  padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);
+}
+.card .tag.v{background:#efeaf8;color:var(--violet);}
+.card h3{font-size:1.06rem;font-weight:700;}
+.card p{font-size:.93rem;color:var(--muted);margin:0;}
+.card .meta{font-size:.8rem;color:#9a93a8;margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);}
+
+/* two column */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start;}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;
+}
+.panel h3{font-size:1.1rem;margin-bottom:8px;}
+.checklist{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:12px;}
+.checklist li{display:flex;gap:11px;font-size:.95rem;color:var(--ink-soft);}
+.checklist li svg{flex:0 0 auto;margin-top:4px;}
+.checklist strong{color:var(--ink);}
+
+/* browse / filter */
+.toolbar{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:10px 14px;margin-bottom:22px;
+}
+.toolbar input[type="search"]{
+  flex:1 1 220px;min-width:0;border:0;background:transparent;outline:none;
+  font:inherit;font-size:.95rem;color:var(--ink);padding:6px 4px;
+}
+.toolbar input[type="search"]::placeholder{color:#a9a2b6;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);
+  padding:6px 15px;border-radius:999px;font:inherit;font-size:.88rem;cursor:pointer;
+  transition:background .16s,color .16s,border-color .16s;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);}
+.topic-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.topic{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
+  transition:border-color .16s,transform .16s;
+}
+.topic:hover{border-color:#d9d0e6;transform:translateY(-2px);}
+.topic h3{font-size:1rem;margin-bottom:6px;}
+.topic p{font-size:.9rem;color:var(--muted);margin:0;}
+.empty{
+  display:none;padding:26px;border:1px dashed var(--line);border-radius:14px;
+  color:var(--muted);font-size:.93rem;text-align:center;background:#fff;
+}
+.empty.show{display:block;}
+.count{font-size:.86rem;color:var(--muted);margin:0 0 14px;}
+
+/* download */
+.dl{
+  background:linear-gradient(150deg,#1d1829 0%,#2b2340 100%);
+  color:#e9e4f2;border-radius:24px;padding:34px;
+  display:grid;grid-template-columns:1.3fr .7fr;gap:26px;align-items:center;
+}
+.dl h2{color:#fff;font-size:clamp(1.3rem,2.5vw,1.65rem);}
+.dl p{color:#c3bcd3;font-size:.96rem;margin:10px 0 0;max-width:36em;}
+.dl .btn-download{
+  display:inline-flex;align-items:center;gap:9px;justify-content:center;
+  background:var(--accent);color:#fff;font-weight:700;font-size:.98rem;
+  padding:13px 26px;border-radius:999px;pointer-events:none;opacity:.92;
+  width:100%;
+}
+.dl-side{text-align:center;}
+.dl-side small{display:block;color:#9f97b3;font-size:.8rem;margin-top:10px;}
+
+/* faq */
+.faq{display:grid;gap:12px;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+}
+details[open]{border-color:#d9d0e6;}
+summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:.98rem;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--accent);font-weight:700;font-size:1.1rem;}
+details[open] summary::after{content:"–";}
+details p{margin:12px 0 0;font-size:.94rem;color:var(--muted);}
+
+/* footer */
+footer.site{
+  margin-top:40px;border-top:1px solid var(--line);background:#fff;
+  padding:38px 0 30px;font-size:.9rem;color:var(--muted);
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.foot-col h3{font-size:.9rem;color:var(--ink);margin-bottom:10px;letter-spacing:.02em;}
+.foot-col ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;}
+.foot-col a:hover{color:var(--accent);}
+.foot-bottom{
+  margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.83rem;
+}
+
+@media (max-width:920px){
+  .hero-grid,.split,.dl{grid-template-columns:1fr;}
+  .cards,.topic-grid{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .stat-strip{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .navbar{min-height:auto;padding:12px 0;gap:10px;}
+  .nav-links{width:100%;justify-content:flex-start;gap:2px;}
+  .nav-links a{padding:6px 10px;font-size:.88rem;}
+  .nav-cta{margin-left:0;}
+  .hero{padding:32px 0 10px;}
+  .cards,.topic-grid,.stat-strip{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  section{padding:40px 0;}
+  .dl{padding:24px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="brand" href="#top" aria-label="91精选网站 首页">
+      <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#16131f"/>
+        <path d="M20 45V19h9.5a8.5 8.5 0 0 1 0 17H20" stroke="#ff9f45" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="45" cy="23" r="5.5" fill="#ff9f45"/>
+      </svg>
+      <span>91精选网站</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#featured">精选推荐</a>
+      <a href="#browse">分类浏览</a>
+      <a href="#howto">使用说明</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#browse">开始浏览</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div id="top"></div>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">内容聚合 · 站点导航</span>
+        <h1 id="h1-title">91精选网站</h1>
+        <p class="lead">91精选网站是一个以精选推荐为核心的内容聚合入口。页面把分散在不同分类中的热门内容、站点入口与浏览路径汇集到一处，让访客在较短时间内判断哪些内容值得看、从哪里进入、以及如何按自己的兴趣继续浏览。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#browse">进入分类浏览</a>
+          <a class="btn btn-ghost" href="#featured">查看精选推荐</a>
+        </div>
+      </div>
+      <figure class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 240" role="presentation">
+          <rect x="8" y="14" width="344" height="212" rx="18" fill="#ffffff" stroke="#e6e1ee"/>
+          <rect x="26" y="34" width="120" height="10" rx="5" fill="#ff9f45"/>
+          <rect x="26" y="54" width="200" height="7" rx="3.5" fill="#e6e1ee"/>
+          <rect x="26" y="82" width="96" height="62" rx="10" fill="#fdf0e5" stroke="#f0dcc8"/>
+          <rect x="134" y="82" width="96" height="62" rx="10" fill="#efeaf8" stroke="#ddd3ee"/>
+          <rect x="242" y="82" width="92" height="62" rx="10" fill="#f4f1ec" stroke="#e6e1ee"/>
+          <circle cx="50" cy="104" r="9" fill="#ff9f45" opacity=".75"/>
+          <circle cx="158" cy="104" r="9" fill="#4a3a72" opacity=".6"/>
+          <circle cx="266" cy="104" r="9" fill="#a9a2b6" opacity=".7"/>
+          <rect x="38" y="122" width="58" height="6" rx="3" fill="#d9cfc2"/>
+          <rect x="146" y="122" width="58" height="6" rx="3" fill="#cfc4e2"/>
+          <rect x="254" y="122" width="58" height="6" rx="3" fill="#ddd8d0"/>
+          <rect x="26" y="164" width="308" height="1.5" fill="#f0ecf5"/>
+          <rect x="26" y="180" width="150" height="7" rx="3.5" fill="#e6e1ee"/>
+          <rect x="26" y="196" width="96" height="7" rx="3.5" fill="#f0ecf5"/>
+          <rect x="286" y="176" width="48" height="20" rx="10" fill="#16131f"/>
+        </svg>
+        <figcaption>精选内容分区与导航结构示意</figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <ul class="stat-strip">
+        <li><strong>精选推荐</strong><span>由编辑按主题归纳的内容卡片</span></li>
+        <li><strong>分类浏览</strong><span>按关键词与标签筛选内容条目</span></li>
+        <li><strong>站点导航</strong><span>集中呈现常用入口与浏览路径</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="featured" aria-labelledby="featured-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">精选推荐</span>
+        <h2 id="featured-title">91精选网站本页推荐的内容分区</h2>
+        <p>推荐区按内容的主题与呈现形式分组，每张卡片说明该分区收录什么、适合哪些访客，以及从哪一步开始阅读更省时间。</p>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <span class="tag">热门聚合</span>
+          <h3>近期热门内容汇总</h3>
+          <p>把近期关注度较高的条目集中排布，便于一次性浏览整体走向，再决定是否深入某一主题。</p>
+          <span class="meta">适合首次访问的访客</span>
+        </li>
+        <li class="card">
+          <span class="tag v">分类条目</span>
+          <h3>按主题归类的浏览清单</h3>
+          <p>按生活、娱乐、资讯等常见主题分栏，每栏只保留与该主题直接相关的条目，减少无关跳转。</p>
+          <span class="meta">适合有明确兴趣的访客</span>
+        </li>
+        <li class="card">
+          <span class="tag">站点导航</span>
+          <h3>常用入口的集中导航</h3>
+          <p>将分散的入口整理成列表，标注每类入口的用途，方便访客按需要选择，而不是逐个尝试。</p>
+          <span class="meta">适合需要快速定位入口的访客</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BROWSE -->
+  <section id="browse" aria-labelledby="browse-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">分类浏览</span>
+        <h2 id="browse-title">在91精选网站中按关键词查找内容</h2>
+        <p>输入关键词或点击下方标签即可筛选条目。筛选只作用于本页展示的分类卡片，结果会即时更新。</p>
+      </div>
+
+      <div class="toolbar" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a9a2b6" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke-linecap="round"/>
+        </svg>
+        <input id="topicSearch" type="search" placeholder="搜索分类，例如：娱乐、资讯、导航" aria-label="搜索分类条目">
+      </div>
+
+      <div class="chips" role="group" aria-label="快速筛选标签">
+        <button class="chip" type="button" data-chip="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-chip="娱乐" aria-pressed="false">娱乐</button>
+        <button class="chip" type="button" data-chip="资讯" aria-pressed="false">资讯</button>
+        <button class="chip" type="button" data-chip="生活" aria-pressed="false">生活</button>
+        <button class="chip" type="button" data-chip="导航" aria-pressed="false">导航</button>
+      </div>
+
+      <p class="count" id="topicCount" aria-live="polite">当前显示 6 个分类条目</p>
+
+      <ul class="topic-grid" id="topicGrid">
+        <li class="topic" data-keywords="娱乐 热门 精选 视频">
+          <h3>娱乐精选</h3>
+          <p>汇集娱乐方向的精选条目，按热度与更新顺序排列，适合想跟进当下热门内容的人。</p>
+        </li>
+        <li class="topic" data-keywords="资讯 快讯 聚合">
+          <h3>资讯聚合</h3>
+          <p>将短讯与专题归并在一起，先看标题概览，再挑选需要细读的条目。</p>
+        </li>
+        <li class="topic" data-keywords="生活 日常 实用">
+          <h3>生活实用</h3>
+          <p>面向日常使用的条目集合，侧重可查可用的信息，避免篇幅过长的铺陈。</p>
+        </li>
+        <li class="topic" data-keywords="导航 入口 站点">
+          <h3>站点导航</h3>
+          <p>把常用入口按用途分组，标注适用范围，减少在多个页面之间来回切换。</p>
+        </li>
+        <li class="topic" data-keywords="榜单 排行 热门 精选">
+          <h3>热度榜单</h3>
+          <p>按关注度排布的条目清单，用于快速判断近期值得注意的方向。</p>
+        </li>
+        <li class="topic" data-keywords="专题 深度 精选 资讯">
+          <h3>主题专题</h3>
+          <p>围绕单一主题集中呈现多条相关内容，适合希望系统了解一个方向的访客。</p>
+        </li>
+      </ul>
+      <div class="empty" id="topicEmpty">没有匹配的分类条目，换一个关键词或点击“全部”重试。</div>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section id="howto" aria-labelledby="howto-title">
+    <div class="wrap split">
+      <div>
+        <div class="section-head">
+          <span class="kicker">使用说明</span>
+          <h2 id="howto-title">第一次使用91精选网站时怎么走</h2>
+          <p>91精选网站的结构以“先看推荐、再进分类、最后定位入口”为顺序。下面的步骤对应页面上的实际区域，可以按顺序执行，也可以直接跳到需要的部分。</p>
+        </div>
+        <div class="panel">
+          <h3>三步浏览路径</h3>
+          <ul class="checklist">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e2732e" stroke-width="2.4" aria-hidden="true"><polyline points="4 12 9 17 20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>先看精选推荐。</strong>用卡片上的标签判断分区性质，再决定是否展开阅读。</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e2732e" stroke-width="2.4" aria-hidden="true"><polyline points="4 12 9 17 20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>再进分类浏览。</strong>在搜索框输入关键词，或点击标签缩小范围，计数会同步更新。</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e2732e" stroke-width="2.4" aria-hidden="true"><polyline points="4 12 9 17 20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>最后定位入口。</strong>站点导航分区按用途分组，找到对应类别即可继续。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>浏览时值得注意的几点</h3>
+        <p>91精选网站只做内容归集与入口引导，不代替原站点承担内容责任。点击外部入口后，实际页面内容与更新节奏以原站点为准。</p>
+        <p>分类卡片上的描述用于说明该分区收录的方向，不代表对其中每条内容的具体评价。遇到与描述不符的条目，可回到分类浏览重新筛选。</p>
+        <p>筛选结果仅在当前页面内生效，刷新页面后会恢复为全部条目，便于重新开始一次浏览。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section aria-labelledby="dl-title">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2 id="dl-title">91精选网站页面资源下载</h2>
+          <p>如需在本地保存本页的分类结构说明与浏览路径清单，可通过下方入口获取。文件内容与页面展示保持一致，便于离线查阅。</p>
+        </div>
+        <div class="dl-side">
+          <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><path d="M12 4v11" stroke-linecap="round"/><polyline points="7 11 12 16 17 11" stroke-linecap="round" stroke-linejoin="round"/><line x1="5" y1="20" x2="19" y2="20" stroke-linecap="round"/></svg>
+            下载
+          </a>
+          <small>下载入口准备中</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">常见问题</span>
+        <h2 id="faq-title">关于91精选网站的常见疑问</h2>
+        <p>以下回答只针对本页展示的功能与内容范围，不涉及页面之外的站点运营信息。</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>91精选网站主要提供什么？</summary>
+          <p>提供精选推荐、分类浏览与站点导航三类内容。推荐区用于快速了解近期值得看的方向，分类浏览用于按关键词定位条目，导航区用于集中查找常用入口。</p>
+        </details>
+        <details>
+          <summary>分类浏览的搜索会保存记录吗？</summary>
+          <p>不会。搜索与标签筛选都在当前页面内即时完成，刷新后恢复为全部条目，页面不保留筛选条件。</p>
+        </details>
+        <details>
+          <summary>为什么下载按钮暂时无法点击？</summary>
+          <p>下载资源仍在准备中，按钮当前为禁用状态，待资源就绪后会替换为可用地址。期间可先通过页面内容查阅分类说明。</p>
+        </details>
+        <details>
+          <summary>页面内容多久更新一次？</summary>
+          <p>推荐与分类条目的调整以实际内容变化为准，本页不承诺固定更新周期。进入外部入口后，内容更新节奏由对应站点决定。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#16131f"/>
+            <path d="M20 45V19h9.5a8.5 8.5 0 0 1 0 17H20" stroke="#ff9f45" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="45" cy="23" r="5.5" fill="#ff9f45"/>
+          </svg>
+          <span>91精选网站</span>
+        </div>
+        <p>91精选网站以精选推荐、分类浏览与站点导航组织内容，帮助访客用更短的路径找到想看的条目与入口。</p>
+      </div>
+      <div class="foot-col">
+        <h3>页面导航</h3>
+        <ul>
+          <li><a href="#featured">精选推荐</a></li>
+          <li><a href="#browse">分类浏览</a></li>
+          <li><a href="#howto">使用说明</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>浏览提示</h3>
+        <ul>
+          <li>筛选仅在当前页生效</li>
+          <li>外部入口以原站点为准</li>
+          <li>下载资源准备中</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 91精选网站 · 内容聚合与导航</span>
+      <span>页面内容以实际展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('topicSearch');
+  var grid = document.getElementById('topicGrid');
+  var items = Array.prototype.slice.call(grid.querySelectorAll('.topic'));
+  var countEl = document.getElementById('topicCount');
+  var emptyEl = document.getElementById('topicEmpty');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var activeChip = 'all';
+
+  function normalize(s){ return (s || '').trim().toLowerCase(); }
+
+  function apply(){
+    var q = normalize(input.value);
+    var visible = 0;
+    items.forEach(function(item){
+      var kw = normalize(item.getAttribute('data-keywords'));
+      var text = normalize(item.textContent);
+      var matchText = !q || kw.indexOf(q) > -1 || text.indexOf(q) > -1;
+      var matchChip = activeChip === 'all' || kw.indexOf(normalize(activeChip)) > -1;
+      var show = matchText && matchChip;
+      item.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    countEl.textContent = '当前显示 ' + visible + ' 个分类条目';
+    emptyEl.classList.toggle('show', visible === 0);
+  }
+
+  input.addEventListener('input', apply);
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', 'false'); });
+      chip.setAttribute('aria-pressed', 'true');
+      activeChip = chip.getAttribute('data-chip');
+      apply();
+    });
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
