@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动漫官网在线观看免费-免费动漫在线观看平台_动漫官网正版资源在线播放</title>
+<meta name="description" content="动漫官网在线观看免费主题首页，汇总动漫官网正版资源与免费在线观看入口，按新番、完结、剧场版与题材分类，说明观看方式、画质选项与常见问题，帮助观众快速找到想看的动漫。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a2b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ff7a59' stroke-width='4'/%3E%3Cpath d='M27 23l15 9-15 9z' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#131a2b;
+    --ink-soft:#2a3450;
+    --paper:#f7f5f0;
+    --card:#ffffff;
+    --line:#e2ded4;
+    --accent:#ff7a59;
+    --accent-2:#ffd166;
+    --muted:#6b6a66;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,245,240,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.2px;color:var(--ink);}
+  .logo svg{width:34px;height:34px;flex:0 0 auto;}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    padding:6px 12px;border-radius:999px;font-size:14px;color:var(--ink-soft);
+    transition:background .2s,color .2s;
+  }
+  nav.main a:hover{background:#fff;color:var(--accent);}
+
+  /* hero */
+  .hero{padding:52px 0 44px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    padding:5px 14px;border-radius:999px;font-size:13px;color:var(--muted);
+    margin-bottom:18px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  h1{
+    font-size:clamp(26px,3.6vw,42px);
+    line-height:1.28;
+    margin:0 0 18px;
+    letter-spacing:-.3px;
+    font-weight:800;
+  }
+  h1 .hl{
+    background:linear-gradient(transparent 62%,var(--accent-2) 62%);
+    padding:0 2px;
+  }
+  .hero p.lead{
+    color:var(--ink-soft);font-size:16px;max-width:34em;margin:0 0 26px;
+  }
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--ink);color:#fff;box-shadow:0 8px 20px rgba(19,26,43,.18);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .btn[data-download-placeholder="true"]{
+    background:#fff;border-color:var(--line);color:var(--muted);
+    pointer-events:none;opacity:.85;font-weight:600;
+  }
+  .hero-art{
+    background:linear-gradient(160deg,#131a2b,#2a3450 70%);
+    border-radius:26px;padding:26px;position:relative;
+    box-shadow:0 24px 50px -22px rgba(19,26,43,.55);
+  }
+  .hero-art svg{width:100%;height:auto;}
+  .hero-art .tag{
+    position:absolute;right:20px;bottom:18px;
+    font-size:12px;color:#ffd166;letter-spacing:2px;
+  }
+
+  /* section basics */
+  section{padding:46px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap;}
+  h2{font-size:clamp(20px,2.4vw,26px);margin:0;font-weight:800;letter-spacing:-.2px;}
+  .sec-head p{margin:6px 0 0;color:var(--muted);font-size:14px;max-width:40em;}
+  .divider{height:1px;background:var(--line);}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+    transition:transform .18s,box-shadow .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -20px rgba(19,26,43,.35);}
+  .card .ic{
+    width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    background:#fff4ee;color:var(--accent);
+  }
+  .card h3{margin:0;font-size:17px;font-weight:800;}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+  .card .meta{font-size:13px;color:var(--muted);margin-top:auto;padding-top:6px;border-top:1px dashed var(--line);}
+
+  /* catalog list */
+  .catalog{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .item .num{
+    font-weight:800;font-size:13px;color:#fff;background:var(--ink);
+    min-width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;
+  }
+  .item h3{margin:0 0 4px;font-size:16px;}
+  .item p{margin:0;font-size:14px;color:var(--ink-soft);}
+  .item .badge{font-size:12px;color:var(--accent);font-weight:700;}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:st;}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;position:relative;
+  }
+  .step::before{
+    counter-increment:st;content:"0" counter(st);
+    font-size:30px;font-weight:800;color:var(--accent-2);display:block;margin-bottom:10px;
+  }
+  .step h3{margin:0 0 8px;font-size:16px;}
+  .step p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  /* faq */
+  .faq{display:grid;gap:12px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px;
+  }
+  details summary{
+    cursor:pointer;padding:16px 0;font-weight:700;font-size:15px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;}
+  details[open] summary::after{content:"–";}
+  details p{margin:0 0 18px;font-size:14.5px;color:var(--ink-soft);}
+
+  /* note strip */
+  .note{
+    background:linear-gradient(120deg,#131a2b,#2a3450);
+    color:#e9e6df;border-radius:22px;padding:36px 34px;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;
+  }
+  .note h2{color:#fff;}
+  .note p{margin:10px 0 0;font-size:14.5px;color:#c8c5bd;}
+  .note .chip{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+    border-radius:14px;padding:18px;font-size:13.5px;color:#dedbd3;
+  }
+  .note .chip b{color:var(--accent-2);}
+
+  /* footer */
+  footer.site{
+    background:var(--ink);color:#b9b6ae;padding:40px 0 28px;margin-top:20px;
+  }
+  footer.site .brand{
+    display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:15px;margin-bottom:14px;
+  }
+  footer.site .brand svg{width:30px;height:30px;}
+  footer.site p{font-size:13.5px;margin:6px 0;max-width:52em;}
+  footer.site .fnav{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;font-size:13.5px;}
+  footer.site .fnav a:hover{color:var(--accent-2);}
+  footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:20px;padding-top:16px;font-size:12.5px;color:#8c8a84;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:28px;}
+    .hero-art{order:-1;}
+    .cards,.steps{grid-template-columns:1fr 1fr;}
+    .catalog{grid-template-columns:1fr;}
+    .note{grid-template-columns:1fr;}
+  }
+  @media (max-width:620px){
+    body{font-size:15.5px;}
+    .nav-row{padding:12px 0;}
+    nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    nav.main a{white-space:nowrap;font-size:13px;}
+    .hero{padding:32px 0 30px;}
+    .cards,.steps{grid-template-columns:1fr;}
+    section{padding:34px 0;}
+    .note{padding:26px 22px;}
+    .btn{padding:11px 20px;font-size:14px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="logo" href="#top" aria-label="动漫官网在线观看免费 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#131a2b"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#ff7a59" stroke-width="4"/>
+        <path d="M27 23l15 9-15 9z" fill="#ffd166"/>
+      </svg>
+      <span>动漫官网在线观看免费</span>
+    </a>
+    <nav class="main">
+      <a href="#top">首页</a>
+      <a href="#types">观看方式</a>
+      <a href="#catalog">资源分区</a>
+      <a href="#steps">观看步骤</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>正版资源 · 免费观看入口</span>
+        <h1>动漫官网在线观看免费</h1>
+        <p class="lead">这里围绕“动漫官网在线观看免费”这一主题，把官方渠道的免费观看信息集中在一页：新番更新、完结补番、剧场版专区与题材分类各自成区，并说明画质、字幕与播放方式，方便你按自己的时间安排挑选内容。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#catalog">进入资源分区</a>
+          <a class="btn btn-ghost" href="#steps">查看观看步骤</a>
+          <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 300" role="img">
+          <defs>
+            <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff7a59"/>
+              <stop offset="1" stop-color="#ffd166"/>
+            </linearGradient>
+          </defs>
+          <rect x="40" y="40" width="340" height="200" rx="18" fill="#1c2440" stroke="#3a4463" stroke-width="2"/>
+          <rect x="62" y="62" width="296" height="132" rx="10" fill="url(#scr)" opacity="0.92"/>
+          <circle cx="210" cy="128" r="26" fill="#131a2b" opacity="0.85"/>
+          <path d="M202 116l22 12-22 12z" fill="#ffd166"/>
+          <rect x="62" y="208" width="120" height="8" rx="4" fill="#3a4463"/>
+          <rect x="62" y="224" width="200" height="8" rx="4" fill="#2c3550"/>
+          <rect x="150" y="252" width="120" height="10" rx="5" fill="#3a4463"/>
+          <circle cx="330" cy="82" r="7" fill="#ffd166"/>
+          <circle cx="358" cy="82" r="7" fill="#ff7a59"/>
+        </svg>
+        <span class="tag">ONLINE · FREE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap divider"></div>
+
+  <!-- 观看方式 -->
+  <section id="types">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>动漫官网在线观看免费的几种入口形式</h2>
+          <p>同一个主题下，官方渠道的免费内容通常按更新状态与内容类型分开呈现，先认清入口类型，再决定追更还是补番。</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M10 9l5 3-5 3z"/></svg>
+          </div>
+          <h3>新番随更入口</h3>
+          <p>按周更新的作品，官方页面会在固定时间放出最新一集，免费集数通常从第一集开始逐周开放，适合边看边追。</p>
+          <span class="meta">适合：当季追更、想同步讨论的观众</span>
+        </article>
+        <article class="card">
+          <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="M3 10h18"/></svg>
+          </div>
+          <h3>完结补番入口</h3>
+          <p>已完结作品一般整季开放，按季或按集排列，适合一次性看完。补番时留意总集数与单集时长，安排观看节奏。</p>
+          <span class="meta">适合：整季连看、时间较集中的观众</span>
+        </article>
+        <article class="card">
+          <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>剧场版与短片入口</h3>
+          <p>剧场版、OVA 与官方短片多作为独立条目呈现，时长与分段方式与 TV 版不同，观看前先确认片长与是否分上下部。</p>
+          <span class="meta">适合：单次观看、偏好完整故事的观众</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资源分区 -->
+  <section id="catalog" style="background:#fbfaf6;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>动漫官网在线观看免费的资源分区</h2>
+          <p>分区按内容属性划分，各分区承担不同的查找任务。点选分区名称即可跳到对应的说明段落。</p>
+        </div>
+      </div>
+      <div class="catalog">
+        <div class="item" id="zone-new">
+          <span class="num">01</span>
+          <div>
+            <h3>当季新番 <span class="badge">随更</span></h3>
+            <p>按更新日排列，标注集数与更新时间。想看动漫官网在线观看免费的新内容，这一区是首选入口。</p>
+          </div>
+        </div>
+        <div class="item" id="zone-done">
+          <span class="num">02</span>
+          <div>
+            <h3>完结佳作 <span class="badge">整季</span></h3>
+            <p>收录已完结作品，按题材与年份归类，适合一次看完，不必等待每周更新。</p>
+          </div>
+        </div>
+        <div class="item" id="zone-movie">
+          <span class="num">03</span>
+          <div>
+            <h3>剧场版专区 <span class="badge">单片</span></h3>
+            <p>独立成片的剧场版与特别篇，附片长与系列顺序提示，避免观看顺序错乱。</p>
+          </div>
+        </div>
+        <div class="item" id="zone-genre">
+          <span class="num">04</span>
+          <div>
+            <h3>题材分类 <span class="badge">检索</span></h3>
+            <p>热血、日常、科幻、校园等题材标签并列，方便按偏好筛选，缩小查找范围。</p>
+          </div>
+        </div>
+        <div class="item" id="zone-dub">
+          <span class="num">05</span>
+          <div>
+            <h3>配音与字幕 <span class="badge">版本</span></h3>
+            <p>说明原声与配音版本的差别、字幕语言选项，以及不同版本在更新节奏上的差异。</p>
+          </div>
+        </div>
+        <div class="item" id="zone-quality">
+          <span class="num">06</span>
+          <div>
+            <h3>画质与设备 <span class="badge">播放</span></h3>
+            <p>涵盖标清与高清的切换方式、手机与电视端的播放建议，帮助获得更稳定的观看体验。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 步骤 -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>三步完成一次观看</h2>
+          <p>从选择作品到开始播放，流程尽量保持简单，不需要额外准备。</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确定想看的作品</h3>
+          <p>在资源分区里按更新状态或题材标签缩小范围，先看简介与集数，再决定是否加入观看列表。</p>
+        </div>
+        <div class="step">
+          <h3>确认版本与画质</h3>
+          <p>进入条目后先看清是原声还是配音、字幕语言以及默认可选画质，再点播放，避免中途切换打断观看。</p>
+        </div>
+        <div class="step">
+          <h3>开始播放并记录进度</h3>
+          <p>播放页通常会保留上次观看位置，追更作品建议固定使用同一设备，进度记录更连贯。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明条 -->
+  <div class="wrap">
+    <div class="note">
+      <div>
+        <h2>关于免费与正版的关系</h2>
+        <p>“动漫官网在线观看免费”强调的是官方渠道开放免费观看的部分，而非所有内容都无限制开放。部分作品会先免费放出前几集，后续集数按平台规则逐步开放；也有作品整季免费但画质档位有限。观看前看清条目页的开放说明，比记住某一条经验更可靠。</p>
+      </div>
+      <div class="chip">
+        <b>观看提示</b><br>
+        优先选择官方条目页进入，留意开放集数、清晰度选项与更新时间三项信息，再决定是追更还是加入待看。
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>围绕动漫官网在线观看免费，观众最常遇到的几个疑问集中在这里。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>免费观看是不是所有集数都能看？</summary>
+          <p>不一定。免费开放的范围由作品与平台规则共同决定，常见形式是前几集免费、后续按周逐步开放，或整季免费但清晰度档位受限。以条目页的说明为准。</p>
+        </details>
+        <details>
+          <summary>追更时怎么不错过最新一集？</summary>
+          <p>先把作品加入观看列表，再记住它的固定更新日。新番通常按周更新，同一部作品的时间点相对稳定，按更新日回访比每天翻找更省事。</p>
+        </details>
+        <details>
+          <summary>原声和配音版本可以随时切换吗？</summary>
+          <p>多数条目在播放页提供版本选择，但切换后可能需要重新定位进度。建议开始观看前先选定版本，尤其是补番时一次性看完的情况。</p>
+        </details>
+        <details>
+          <summary>手机和电视观看有什么需要注意的？</summary>
+          <p>手机端注意横屏与清晰度切换，流量环境下可先降档；电视端建议提前确认投屏或应用内的播放支持情况，再安排连续观看。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#2a3450"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#ff7a59" stroke-width="4"/>
+        <path d="M27 23l15 9-15 9z" fill="#ffd166"/>
+      </svg>
+      <span>动漫官网在线观看免费</span>
+    </div>
+    <p>本页围绕“动漫官网在线观看免费”整理观看入口类型、资源分区、播放步骤与常见问题，帮助观众在官方渠道内规划追更与补番。内容以条目页实际说明为准，开放范围与清晰度选项可能随作品调整。</p>
+    <nav class="fnav">
+      <a href="#types">观看方式</a>
+      <a href="#catalog">资源分区</a>
+      <a href="#steps">观看步骤</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="copy">动漫官网在线观看免费 · 主题首页</div>
+  </div>
+</footer>
+
+</body>
+</html>
